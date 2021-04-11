@@ -15,7 +15,7 @@ namespace JC2.Save
             // Fuel storage/transport/production
             points.Add("Fuel Depot", 150);
             points.Add("Fuel Silo", 500);
-            points.Add("Bio Fuel Shaft", 250);
+            points.Add("Fuel Shaft", 250);
             points.Add("Gas Holder", 500);
             points.Add("Gas Pump", 100);
             points.Add("Gas Tank", 10);
@@ -25,11 +25,11 @@ namespace JC2.Save
 
             // Communication equipment
             points.Add("Radar", 250);
-            points.Add("Communications Mast", 1000);
+            points.Add("Radio Mast", 1000);
             points.Add("Broadcast Tower", 250);
             points.Add("Satellite Dish", 250);
             points.Add("Mobile Radar", 500);
-            points.Add("Communications Outpost", 1500);
+            points.Add("Communication Station", 1500);
 
             // Electric power
             points.Add("Wind Turbine", 500);
@@ -44,6 +44,8 @@ namespace JC2.Save
             points.Add("Factory Chimney", 500);
             points.Add("Water Tower", 250);
             points.Add("Crane", 500);
+            points.Add("Colonel", 1000);
+            points.Add("SAM Site", 500);
 
         }
     }

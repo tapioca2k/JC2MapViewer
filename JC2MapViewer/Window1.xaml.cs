@@ -245,7 +245,7 @@ namespace JC2MapViewer
 									int chaos = 0;
 									if (ChaosPointInfo.points.ContainsKey(i.Key)) chaos = ChaosPointInfo.points[i.Key];
 									totalchaos += chaos;
-									tmp.Add( string.Format( " {0}x  {1} ({2}cp)", i.Value, i.Key, chaos > 0 ? i.Value * chaos : 0 ) );
+									tmp.Add( string.Format( " {0}x  {1} {2}", i.Value, i.Key, chaos > 0 ? "(" + i.Value * chaos + "cp)" : "" ) );
 								}
 								description = "Missing: " + totalchaos + "cp\r\n" + string.Join( "\r\n", tmp.ToArray() );
 							}
