@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BigEndianBinaryReader.cs" />
+    <Compile Include="ChaosPointInfo.cs" />
     <Compile Include="EndianessSwitchableBitConverter.cs" />
     <Compile Include="JC2\Save\Chunk_CHeatSpawnManager.cs" />
     <Compile Include="JC2\Save\Chunk_CSpawnManager.cs" />

@@ -236,14 +236,18 @@ namespace JC2MapViewer
 							}
 
 							string description = null;
+							int totalchaos = 0;
 							if( missedPerSettlement.ContainsKey( s.Key ) )
 							{
 								List<string> tmp = new List<string>();
 								foreach( var i in missedPerSettlement[s.Key] )
 								{
-									tmp.Add( string.Format( " {0}x  {1}", i.Value, i.Key ) );
+									int chaos = 0;
+									if (ChaosPointInfo.points.ContainsKey(i.Key)) chaos = ChaosPointInfo.points[i.Key];
+									totalchaos += chaos;
+									tmp.Add( string.Format( " {0}x  {1} ({2}cp)", i.Value, i.Key, chaos > 0 ? i.Value * chaos : 0 ) );
 								}
-								description = "Missing:\r\n" + string.Join( "\r\n", tmp.ToArray() );
+								description = "Missing: " + totalchaos + "cp\r\n" + string.Join( "\r\n", tmp.ToArray() );
 							}
 
 							string text = string.Format( "{0}\nCompleted: {1}%", s.Value.Text, s.Value.PercentDone );
