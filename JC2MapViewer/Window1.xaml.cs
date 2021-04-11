@@ -244,13 +244,14 @@ namespace JC2MapViewer
 								{
 									int chaos = 0;
 									if (ChaosPointInfo.points.ContainsKey(i.Key)) chaos = ChaosPointInfo.points[i.Key];
+									else if (i.Key.StartsWith("Colonel ")) chaos = ChaosPointInfo.points["Colonel"]; // hack for unique colonel names
 									totalchaos += chaos * i.Value;
 									tmp.Add( string.Format( " {0}x  {1} {2}", i.Value, i.Key, chaos > 0 ? "(" + i.Value * chaos + "cp)" : "" ) );
 								}
-								description = "Missing: " + totalchaos + "cp\r\n" + string.Join( "\r\n", tmp.ToArray() );
+								description = string.Join( "\r\n", tmp.ToArray() );
 							}
 
-							string text = string.Format( "{0}\nCompleted: {1}%", s.Value.Text, s.Value.PercentDone );
+							string text = string.Format( "{0}\nCompleted: {1}%\nChaos Missing: {2}", s.Value.Text, s.Value.PercentDone, totalchaos );
 
 							if( itemPoints.ContainsKey( s.Key ) )
 							{
